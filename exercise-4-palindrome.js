@@ -1,11 +1,12 @@
 function palindrome(kata) {
-    var re = /[\W_]/g;
-    var lowRegStr = kata.toLowerCase().replace(re, '');
-    var reverseStr = lowRegStr.split('').reverse().join('');
-    if(reverseStr === lowRegStr) {
-        return true;
-    } else {
-        return false;
+    for(var i = 0; i < kata.length; i++) {
+        for(var j = kata.length-1; j >= 0; j--) {
+            if(kata[i] === kata[j]) {
+                return true
+            } else {
+                return false
+            }
+        }
     }
 }
 
